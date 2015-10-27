@@ -95,7 +95,7 @@ void loop() {
           lights[l].nextStep = currentMillis;
         }
         
-        // Milliseconds to next change
+        // Milliseconds to next change.
         if (lights[l].nextStep > currentMillis) {
           progress = (lights[l].nextStep - currentMillis);
         }
