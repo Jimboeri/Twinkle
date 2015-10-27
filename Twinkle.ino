@@ -89,7 +89,13 @@ void loop() {
   switch (programMode) {
     case PROG_NORMAL: // NORMAL mode
       for (l = 0; l < LIGHT_COUNT; l++) {
-        // Milliseconds to next chane
+        // This check is necessary as the millisecond clock loops back to 0 after 35 days
+        // or 4,294,967,295 milliseconds
+        if (lights[l].nextStep > currentMillis + 4000000000) {
+          lights[l].nextStep = currentMillis;
+        }
+        
+        // Milliseconds to next change.
         if (lights[l].nextStep > currentMillis) {
           progress = (lights[l].nextStep - currentMillis);
         }
@@ -210,4 +216,3 @@ void doCommandParser()
   }
 
 }
-
