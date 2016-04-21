@@ -1,4 +1,4 @@
-const char* VERSION_STRING = "Passageway Lights Twinkler: Version 4.0 12/08/2015";
+ const char* VERSION_STRING = "Passageway Lights Twinkler: Version 4.0 12/08/2015";
 
 //Light mode values. Each light will have one of these modes defined
 #define UP 2
